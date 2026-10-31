@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GhostJob Buster</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo-icon">👻</div>
+        <div>
+          <h1 class="brand-title">GhostJob Buster</h1>
+          <span class="brand-sub">LinkedIn & Indeed Reality Layer</span>
+        </div>
+      </div>
+      <span class="status-badge" id="status-badge">Active</span>
+    </header>
+
+    <!-- Active Job Detected Card -->
+    <section class="active-job-card" id="active-job-card" style="display: none;">
+      <div class="card-header">
+        <span class="card-badge">Current Job Requisition</span>
+        <span class="active-risk-pill" id="active-risk-pill">85% Ghost Risk</span>
+      </div>
+      <div class="active-job-body">
+        <h2 class="active-title" id="active-title">Senior Software Engineer</h2>
+        <span class="active-company" id="active-company">Company Name</span>
+        <span class="active-meta" id="active-meta">Reposted 2 weeks ago • Over 200 applicants</span>
+      </div>
+      <div class="active-actions-grid">
+        <a href="#" id="btn-active-ats" target="_blank" class="active-btn ats">
+          <span>🏢 Verify on Native Career Site / ATS</span>
+          <span class="btn-arrow">↗</span>
+        </a>
+        <a href="#" id="btn-active-hires" target="_blank" class="active-btn hires">
+          <span>👥 Check Recent Hires for this Title</span>
+          <span class="btn-arrow">↗</span>
+        </a>
+        <a href="#" id="btn-active-layoffs" target="_blank" class="active-btn layoffs">
+          <span>📰 Layoff & Hiring Freeze Radar</span>
+          <span class="btn-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Fallback banner when not on a job page -->
+    <div id="no-active-job" class="no-job-banner">
+      💡 Open any job listing on <strong>LinkedIn</strong> or <strong>Indeed</strong> to see real-time ghost probability scores and candidate reality checks.
+    </div>
+
+    <!-- Candidate Protection Stats -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number" id="stat-scanned">0</span>
+        <span class="stat-label">Scanned</span>
+      </div>
+      <div class="stat-card alert-stat">
+        <span class="stat-number" id="stat-flagged">0</span>
+        <span class="stat-label">Ghost Jobs</span>
+      </div>
+      <div class="stat-card savings-stat">
+        <span class="stat-number" id="stat-hours">0h</span>
+        <span class="stat-label">Hours Saved</span>
+      </div>
+    </section>
+
+    <!-- Recent Scanned Job Applications -->
+    <section class="recent-section">
+      <div class="recent-header">
+        <h2 class="section-title">Recent Job Analysis</h2>
+        <button id="clear-history-btn" class="btn-text">Clear</button>
+      </div>
+      <div id="recent-list" class="recent-list">
+        <div class="empty-state">No jobs evaluated yet. Browse LinkedIn or Indeed to see live detections.</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="privacy-note">🔒 Zero personal data collected. 100% client-side.</span>
+      <span class="version-tag">v1.0.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

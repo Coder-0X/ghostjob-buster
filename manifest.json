@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "GhostJob Buster - LinkedIn & Indeed Reality Layer",
+  "version": "1.0.0",
+  "description": "Exposes ghost and zombie job postings on LinkedIn and Indeed, tracking reposts, applicant saturation, and hiring freezes.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "GhostJob Buster",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "*://*.linkedin.com/*",
+    "*://*.indeed.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/*",
+        "*://*.indeed.com/*"
+      ],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
